@@ -1,0 +1,15 @@
+# Logfile created on Mon Jun 27 21:39:27 -0400 2011 by logger.rb/22285
+REQUESTING PAGE: GET /admin with {} and HTTP headers {}
+REQUESTING PAGE: GET /admin with {} and HTTP headers {}
+REQUESTING PAGE: GET /admin/health with {} and HTTP headers {"HTTP_REFERER"=>"/admin"}
+REQUESTING PAGE: POST /admin/health/generate_exception with {} and HTTP headers {"HTTP_REFERER"=>"/admin/health"}
+REQUESTING PAGE: GET /admin with {} and HTTP headers {}
+REQUESTING PAGE: GET /admin/comments with {} and HTTP headers {"HTTP_REFERER"=>"/admin"}
+REQUESTING PAGE: POST /admin/comments/1 with {"_method"=>"delete", "utf8"=>"✓"} and HTTP headers {"HTTP_REFERER"=>"/admin/comments"}
+REQUESTING PAGE: GET http://example.org/admin/comments with {} and HTTP headers {"HTTP_REFERER"=>"/admin/comments/1"}
+REQUESTING PAGE: GET /admin/undo_items with {} and HTTP headers {"HTTP_REFERER"=>"http://example.org/admin/comments"}
+REQUESTING PAGE: POST /admin/undo_items/1/undo with {"utf8"=>"✓"} and HTTP headers {"HTTP_REFERER"=>"/admin/undo_items"}
+REQUESTING PAGE: GET /admin/undo_items with {} and HTTP headers {"HTTP_REFERER"=>"/admin/undo_items/1/undo"}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+REQUESTING PAGE: GET /archives with {} and HTTP headers {"HTTP_REFERER"=>"/"}

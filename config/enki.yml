@@ -1,0 +1,15 @@
+# Configuration options for your blog - customise to taste
+# This file contains no secret information, so can be stored in source control (unlike database.yml)
+title:  Blog
+url:    http://severe-day-745.heroku.com/
+author:
+  name: Sarah Rohm 
+  email: sarahjrohm@gmail.com
+  open_id: # These are used to login to the admin area
+      http://sarahjrohm.myopenid.com
+ 
+# Delete the following section if your site will not be acting as an OpenID delegate (http://wiki.openid.net/Delegation)
+# If you're deploying with mongrel, make sure you read http://rhnh.net/2008/04/13/nginx-openid-delegation-and-yadis
+open_id_delegation:
+  server: http://www.myopenid.com/server
+  delegate: http://username.myopenid.com
