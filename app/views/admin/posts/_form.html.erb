@@ -1,6 +1,7 @@
-<% content_for(:head) do -%>
-  <%= javascript_include_tag 'admin/edit-preview' %>
-<% end -%>
+
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+	
 
 <%= form.inputs do -%>
   <%= form.input :title -%>
