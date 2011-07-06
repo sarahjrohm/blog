@@ -10,6 +10,14 @@ module PageTitleHelper
   def archives_title
     compose_title("Archives")
   end
+  
+  def about_title
+    compose_title("About")
+  end
+  
+  def contact_title
+    compose_title("Contact")
+  end
 
   def page_title(page)
     compose_title(page.title)

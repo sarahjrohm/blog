@@ -1,8 +1,11 @@
 module NavigationHelper
+  
   def page_links_for_navigation
     link = Struct.new(:name, :url)
     [link.new("Home", root_path),
-     link.new("Archives", archives_path)] +
+     link.new("Archives", archives_path),
+     link.new("About", about_path),
+     link.new("Contact", contact_path)] +
       Page.find(:all, :order => 'title').collect {|page| link.new(page.title, page_path(page.slug))}
   end
 

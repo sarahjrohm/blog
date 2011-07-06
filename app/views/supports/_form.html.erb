@@ -1,0 +1,24 @@
+
+<% form_for @support, :url => { :action => "create" }, :html => { :method => :post } do |f| %>
+  <p>
+    <%= f.label "Name" %>
+  </p>
+  <p>
+    <%= f.text_field :sender_name %>
+  </p>
+  <p>
+    <%= f.label "Email" %>
+  </p>
+  <p>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label "Message" %>
+  </p>
+  <p>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>

@@ -2,53 +2,54 @@
 <html dir="ltr" lang="en-US">
 <head>
   <meta charset="utf-8">
-  <title><%= html_title yield(:page_title) %></title>
+  <title>A Life of Plenty</title>
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'jquery' %>
   <%= javascript_include_tag 'rails' %>
   <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-	
   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
-<body>
-  <div id="page_container">
-    <div id="content">
-      <h1 id="page_heading"><a href="<%= root_url %>"><%= enki_config[:title] %></a></h1>
 
-      <div id="main">
-        <%= yield %>
-      </div>
-
-      <div id="navigation">
-        <h2>Pages</h2>
+      <div id= "header">
+      <h1> A Life of Plenty </h1>
+                <div id="navigation">
         <ul>
           <% page_links_for_navigation.each do |link| -%>
             <li><%= link_to(link.name, link.url) %></li>
           <% end -%>
         </ul>
+          </div>
+      </div>
+<body>
+  <%= raw RedCloth.new("h3. Testing RedCloth").to_html %>
+  <div id="page_container">
+
         <% unless category_links_for_navigation.empty? -%>
-          <h2>Categories</h2>
+        <div id= "menu">
+          <h2>Tags</h2>
           <ul>
             <% category_links_for_navigation.each do |link| -%>
               <li><%= link_to(link.name, link.url) %></li>
             <% end -%>
           </ul>
         <% end -%>
-        <form method="get" id="sform" action="http://www.google.com/search">
-          <div>
-            <h2><label for="q">Search</label></h2>
+        
+      </div>
+    <div id="content">
+      <h1 id="page_heading"></h1>
 
-            <input type="text" id="q" value="" name="q">
-            <input type="hidden" name="sitesearch" value="<%= enki_config[:url] %>">
-          </div>
-        </form>
+      <div id="main">
+        <%= yield %>
       </div>
 
-      <div id="footer"><%= enki_config[:title] %> &#169; <%= enki_config[:author, :name] %>. Valid <a href="http://validator.w3.org/check?uri=referer">HTML5</a> and <%= link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{enki_config[:url]}/posts.atom" %>. Powered by <a href="http://www.enkiblog.com" title="A Ruby on Rails blogging app for the fashionable developer">Enki</a>.</div>
+
+
+      <div id="footer"> <link rel="alternate" type="application/rss+xml" title="RSS" href="url/to/rss/file" /></div>
     </div>
   </div>
+<%= render :partial => 'layouts/ga' if RAILS_ENV == 'production' %>
 </body>
 </html>

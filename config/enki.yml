@@ -1,7 +1,7 @@
 # Configuration options for your blog - customise to taste
 # This file contains no secret information, so can be stored in source control (unlike database.yml)
-title:  Blog
-url:    http://severe-day-745.heroku.com/
+title:    A Life of Plenty
+url:    http://alifeofplenty.heroku.com/
 author:
   name: Sarah Rohm 
   email: sarahjrohm@gmail.com
