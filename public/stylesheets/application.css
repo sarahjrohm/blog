@@ -142,6 +142,26 @@ p {
 strong{
   color: #333333;
 }
+
+/* Nested Lists */
+.open {
+	display: block;
+	}
+.closed {
+	display: none;
+	}
+#picture li {
+	list-style-type: none;
+	padding-top: .2em;
+	padding-bottom: .2em;
+	font-size: 18px;
+	}
+        
+#picture li img {
+	vertical-align: middle;
+	}
+	
+	
 /* Links */
 .openid{
   background-image: url("/images/openid_icon.png");

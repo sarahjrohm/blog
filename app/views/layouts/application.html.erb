@@ -7,9 +7,11 @@
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag 'jquery' %>
   <%= javascript_include_tag 'rails' %>
+  <%= javascript_include_tag 'aqtree3clickable' %>
   <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-  <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
+
+   <%= open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
 
@@ -34,8 +36,13 @@
               <li><%= link_to(link.name, link.url) %></li>
             <% end -%>
           </ul>
-        <% end -%>
-        
+          <h2>Pictures</h2>
+          <ul>
+            <% picture_links_for_navigation.each do |link| -%>
+              <li><%= link_to(link.name, link.url) %></li>
+            <% end -%>
+          </ul>
+          <% end -%>
       </div>
     <div id="content">
       <h1 id="page_heading"></h1>

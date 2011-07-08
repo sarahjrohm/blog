@@ -1,0 +1,30 @@
+/* Turn off list bullets */
+ul.aqtree3clickable li { list-style: none; }
+
+ul.aqtree3clickable, ul.aqtree3clickable ul, ul.aqtree3clickable li {
+  margin: 0; padding: 0; 
+}
+
+/* This controls the indent for each sublist */
+ul.aqtree3clickable ul {
+  padding-left: 20px;
+}
+
+/* Provide space for our own "bullet" inside the link */
+ul.aqtree3clickable li a { padding-left: 20px; }
+
+/* Show "bullets" in the links, depending on the class of the
+   LI that the link's in */
+ul.aqtree3clickable li.aq3open a {
+    background: url('/images/opened.gif') center left no-repeat;
+}
+ul.aqtree3clickable li.aq3closed a {
+    background: url('/images/closed.gif') center left no-repeat;
+}
+ul.aqtree3clickable li.aq3bullet a {
+    background: url('') center left no-repeat;
+}
+
+/* Actually show and hide sublists */
+ul.aqtree3clickable li.aq3open ul { display: block; }
+ul.aqtree3clickable li.aq3closed ul { display: none; }
