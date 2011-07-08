@@ -1,4 +1,14 @@
-  <cite><%= author_link(comment) %></cite> says:
-  <br>
-  <small class="commentmetadata"><a href="#comment-<%= comment.id %>" title=""><%= format_comment_date(comment.created_at) %></a></small>
-  <p><%=raw comment.body_html %></p>
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+
+
+<div class="commentlist">
+  <h3><cite><%= author_link(comment) %></cite> says:<small class="commentmetadata"><a href="#comment-<%= comment.id %>" title="" ><%= format_comment_date(comment.created_at) %></a></small></h3>
+  <p><%=raw comment.body %>
+  </p>
+
+  
+</div>
+ <hr/>
+  

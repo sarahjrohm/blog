@@ -18,6 +18,10 @@ module PageTitleHelper
   def contact_title
     compose_title("Contact")
   end
+  
+    def map_title
+    compose_title("Trip Map")
+  end
 
   def page_title(page)
     compose_title(page.title)

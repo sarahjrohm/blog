@@ -24,7 +24,6 @@
           </div>
       </div>
 <body>
-  <%= raw RedCloth.new("h3. Testing RedCloth").to_html %>
   <div id="page_container">
 
         <% unless category_links_for_navigation.empty? -%>
@@ -47,7 +46,7 @@
 
 
 
-      <div id="footer"> <link rel="alternate" type="application/rss+xml" title="RSS" href="url/to/rss/file" /></div>
+      <div id="footer"> <%= auto_discovery_link_tag(:rss, "http://alifeofplenty.heroku.com") %></div>
     </div>
   </div>
 <%= render :partial => 'layouts/ga' if RAILS_ENV == 'production' %>

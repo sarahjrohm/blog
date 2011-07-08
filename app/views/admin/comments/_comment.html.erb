@@ -1,3 +1,7 @@
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+
 <tr id="comment-<%= comment.id %>" class="<%= cycle('', 'alt') %>">
   <td class='created_at'><%= comment.created_at.strftime('%d %b, %Y') %></td>
   <td class='author'><%= link_to(comment.author, admin_comment_path(comment)) %></td>
