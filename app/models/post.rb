@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base
   end
   
   def get_image
-    return image || "default.jpg"
+    return image || "/tmp/postimages/default.jpg"
   end
 
   def published?

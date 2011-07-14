@@ -88,7 +88,7 @@ class Admin::PostsController < Admin::BaseController
     def handle_image_upload(params)
     if params[:image]
       uploaded_io = params[:image]
-      File.open(Rails.root.join('public', 'images','postimages',
+      File.open(Rails.root.join('tmp','postimages',
           uploaded_io.original_filename), 'wb') do |file|
         file.write(uploaded_io.read)
       end
