@@ -93,8 +93,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
 
-private
-
   def handle_image_upload(params)
     if params[:image]
       uploaded_io = params[:image]
