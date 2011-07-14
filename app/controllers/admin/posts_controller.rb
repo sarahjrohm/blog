@@ -84,16 +84,8 @@ class Admin::PostsController < Admin::BaseController
       }
     end
   end
-
-  protected
-
-
-  def find_post
-    @post = Post.find(params[:id])
-  end
-
-
-  def handle_image_upload(params)
+  
+    def handle_image_upload(params)
     if params[:image]
       uploaded_io = params[:image]
       File.open(Rails.root.join('public', 'images','postimages',
@@ -103,6 +95,16 @@ class Admin::PostsController < Admin::BaseController
       params[:post]['image'] = uploaded_io.original_filename
     end
   end
+
+  protected
+
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
+
+
+
   
 end
   
