@@ -1,7 +1,10 @@
 
  <h2><%= link_to(post.title, post_path(post)) %></h2>
+<% if post.get_image.nil? %>
+  
+<%= render :partial => 'postsummarize', :locals => {:post => post} %>
 
- <% if post.id.even? -%> 
+ <% elsif post.id.even? -%> 
 <table>
 
       <tr>
