@@ -1,0 +1,27 @@
+
+ <h2><%= link_to(post.title, post_path(post)) %></h2>
+ <% if post.get_image.nil? %>
+   
+   <%= render :partial => 'postsummarize', :locals => {:post => post} %>
+   
+ <% elsif post.id.even? -%> 
+<table>
+
+      <tr>
+      <td><%= render :partial => 'extractpicture', :locals => {:post => post} %></td>
+      <td><%= render :partial => 'postsummarize', :locals => {:post => post} %></td>
+      </tr>
+</table>
+
+<% else -%>
+
+<table>
+
+      <tr>
+      <td><%= render :partial => 'postsummarize', :locals => {:post => post} %></td>
+      <td><%= render :partial => 'extractpicture', :locals => {:post => post} %></td>
+      </tr>
+</table>
+ 
+
+<% end %>

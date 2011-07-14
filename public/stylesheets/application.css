@@ -125,8 +125,9 @@ h2{
   margin-bottom: 0px;
 }
 
-h2 h3, h4, h5{
+h2, h3, h4, h5{
   color: black;
+    letter-spacing: -1px;
 }
 
 /* Text */
@@ -197,7 +198,8 @@ img{
   height:30px;
   background-color:white;
   border-radius: 0px;
-  font-size: 20px;
+  font-size: 22px;
+  letter-spacing: -.1em;
 }
 
   #navigation ul{
@@ -320,6 +322,17 @@ div.meta{
 }
 .archive-month .tags{
   color: #bbbbbb;
+}
+
+.archive-month li{
+  list-style:none;
+  font-size: 16px;
+}
+
+.archive-month h2{
+  font-size: 26px;
+  letter-spacing: -3px;
+  
 }
 
 .meta a, .archive-month .tags a{

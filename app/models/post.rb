@@ -26,6 +26,10 @@ class Post < ActiveRecord::Base
   def minor_edit?
     self.minor_edit == "1"
   end
+  
+  def get_image
+    return image || nil
+  end
 
   def published?
     published_at?

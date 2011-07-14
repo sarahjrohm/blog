@@ -7,6 +7,10 @@ module DateHelper
     date.strftime("%B %d, %Y")
   end
 
+  def format_post_day(date)
+    date.strftime("%d")
+  end
+
   def format_comment_date(date)
     format_post_date(date) + " at " + date.strftime("%l:%M %p")
   end

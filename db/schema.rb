@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110708115508) do
+ActiveRecord::Schema.define(:version => 20110711213844) do
 
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                                 :null => false
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20110708115508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "edited_at",                                 :null => false
+    t.string   "image"
   end
 
   add_index "posts", ["published_at"], :name => "index_posts_on_published_at"

@@ -4,4 +4,10 @@ module PostsHelper
   def more_content?
     @posts.size == Post::DEFAULT_LIMIT
   end
+  
+  def summarize(body, length)
+    return simple_format(truncate(body.gsub(/<\/?.*?>/,  ""), :length => length)).gsub(/<\/?.*?>/,  "")
+  end
+
+  
 end
