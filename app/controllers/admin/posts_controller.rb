@@ -13,7 +13,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def create
-    handle_image_upload(params)
     @post = Post.new(params[:post])
     if @post.save
       respond_to do |format|
@@ -30,7 +29,6 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def update
-    handle_image_upload(params)
     if @post.update_attributes(params[:post])
       respond_to do |format|
         format.html {
@@ -85,16 +83,6 @@ class Admin::PostsController < Admin::BaseController
     end
   end
   
-    def handle_image_upload(params)
-    if params[:image]
-      uploaded_io = params[:image]
-      File.open(Rails.root.join('tmp','postimages',
-          uploaded_io.original_filename), 'wb') do |file|
-        file.write(uploaded_io.read)
-      end
-      params[:post]['image'] = uploaded_io.original_filename
-    end
-  end
 
   protected
 
