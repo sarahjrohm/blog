@@ -93,7 +93,7 @@ a:hover{
 #content{
   float: left;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 0px;
   margin-left: 195px;
   padding-left: 5px;
   min-width: 800px;
@@ -250,7 +250,7 @@ img{
 
 #menu {
   background-color: white;
-  border-radius: 5px;
+  border-radius: 0px;
   width: 15em;
   float:left;
   top: -1px; 

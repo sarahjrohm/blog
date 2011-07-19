@@ -17,7 +17,7 @@ module NavigationHelper
   
     def picture_links_for_navigation
     link = Struct.new(:name, :url)
-      Page.find(:all, :order => 'title').collect {|page| link.new(page.title, page_path(page.slug))}
+    Page.find(:all, :order => 'title').collect {|page| link.new(page.title, page_path(page.slug))}
   end
 
   def class_for_tab(tab_name, index)
