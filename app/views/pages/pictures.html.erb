@@ -1,0 +1,36 @@
+<div id="text">
+      <h1 id="page_heading"></h1>
+
+ 
+<h2>Pictures</h2>
+<p> Here you'll find all the pictures - unfiltered and out of context -
+that I've taken. Keep checking back often, I'll be updating these postings frequently!
+</p>
+<div class='archive-month'>
+
+<li>
+      <ul><% picture_links_for_navigation.each do |link| -%>
+      <li <%= link_to(link.name, link.url) %></li>
+      <% end -%>
+      </ul></li>
+
+<% if @months.empty? -%>
+	<p>Once posts are added they will start to appear in this archive.</p>
+<% else -%>
+
+	<% @months.each do |month| -%>
+	<div class='archive-month'>
+		<h2><%= format_month(month.date) %></h2>
+	<ul >
+	  <% month.posts.each do |post| -%>
+	  <table>
+	   <tr><td style="width: 20px;"> <li><%= format_post_day(post.published_at) %></td><td><%= link_to(post.title, post_path(post)) %></td><td><% unless post.tags.empty? %> <span class='tags'>(<%= linked_tag_list(post.tags) %>)</span><% end -%></td></li>
+	   </tr></table>
+	  <% end -%>
+	</ul>
+	<% end -%>
+	</div>
+<% end -%>
+                  
+</div>
+</div>
