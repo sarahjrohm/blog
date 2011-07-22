@@ -27,23 +27,41 @@ ActiveRecord::Schema.define(:version => 20110720134429) do
 
   add_index "albums", ["published_at"], :name => "index_albums_on_published_at"
 
+  create_table "ckeditor_assets", :force => true do |t|
+    t.string    "data_file_name",                                 :null => false
+    t.string    "data_content_type"
+    t.integer   "data_file_size"
+    t.integer   "assetable_id"
+    t.string    "assetable_type",    :limit => 30
+    t.string    "type",              :limit => 25
+    t.string    "guid",              :limit => 10
+    t.integer   "locale",                          :default => 0
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "fk_assetable"
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_assetable_type"
+  add_index "ckeditor_assets", ["user_id"], :name => "fk_user"
+
   create_table "comments", :force => true do |t|
-    t.integer  "post_id",      :null => false
-    t.string   "author",       :null => false
-    t.string   "author_url",   :null => false
-    t.string   "author_email", :null => false
-    t.text     "body",         :null => false
-    t.text     "body_html",    :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "post_id",      :null => false
+    t.string    "author",       :null => false
+    t.string    "author_url",   :null => false
+    t.string    "author_email", :null => false
+    t.text      "body",         :null => false
+    t.text      "body_html",    :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "comments", ["created_at"], :name => "index_comments_on_created_at"
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
   create_table "maps", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|
@@ -62,49 +80,48 @@ ActiveRecord::Schema.define(:version => 20110720134429) do
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "title",        :null => false
-    t.string   "slug",         :null => false
-    t.text     "body",         :null => false
-    t.text     "body_html",    :null => false
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title",      :null => false
+    t.string    "slug",       :null => false
+    t.text      "body",       :null => false
+    t.text      "body_html",  :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "pages", ["created_at"], :name => "index_pages_on_created_at"
   add_index "pages", ["title"], :name => "index_pages_on_title"
 
   create_table "posts", :force => true do |t|
-    t.string   "title",                                     :null => false
-    t.string   "slug",                                      :null => false
-    t.text     "body",                                      :null => false
-    t.text     "body_html",                                 :null => false
-    t.boolean  "active",                  :default => true, :null => false
-    t.integer  "approved_comments_count", :default => 0,    :null => false
-    t.string   "cached_tag_list"
-    t.datetime "published_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "edited_at",                                 :null => false
-    t.string   "image"
+    t.string    "title",                                     :null => false
+    t.string    "slug",                                      :null => false
+    t.text      "body",                                      :null => false
+    t.text      "body_html",                                 :null => false
+    t.boolean   "active",                  :default => true, :null => false
+    t.integer   "approved_comments_count", :default => 0,    :null => false
+    t.string    "cached_tag_list"
+    t.timestamp "published_at"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.timestamp "edited_at",                                 :null => false
+    t.string    "image"
   end
 
   add_index "posts", ["published_at"], :name => "index_posts_on_published_at"
 
   create_table "sessions", :force => true do |t|
-    t.string   "session_id", :null => false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "session_id", :null => false
+    t.text      "data"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.datetime "created_at"
+    t.integer   "tag_id"
+    t.integer   "taggable_id"
+    t.timestamp "created_at"
   end
 
   add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
@@ -118,9 +135,9 @@ ActiveRecord::Schema.define(:version => 20110720134429) do
   add_index "tags", ["name"], :name => "index_tags_on_name"
 
   create_table "undo_items", :force => true do |t|
-    t.string   "type",       :null => false
-    t.datetime "created_at", :null => false
-    t.text     "data"
+    t.string    "type",       :null => false
+    t.timestamp "created_at", :null => false
+    t.text      "data"
   end
 
   add_index "undo_items", ["created_at"], :name => "index_undo_items_on_created_at"
