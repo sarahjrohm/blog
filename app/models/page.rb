@@ -55,6 +55,10 @@ class Page < ActiveRecord::Base
     end
   end
 
+  def set_dates
+    self.published_at = Chronic.parse(self.published_at_natural)
+  end
+
   def apply_filter
     self.body_html = EnkiFormatter.format_as_xhtml(self.body)
   end

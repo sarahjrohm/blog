@@ -1,0 +1,8 @@
+<% content_for(:page_title) do %><%= albums_title %><% end -%>
+
+<% if @months.empty? -%>
+	<p>Once albums are added they will start to appear on this page.</p>
+<% else -%>
+
+<%= render :partial => 'albumindex' %>
+<% end -%>
