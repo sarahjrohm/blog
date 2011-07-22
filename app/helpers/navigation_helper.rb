@@ -3,6 +3,7 @@ module NavigationHelper
   def page_links_for_navigation
     link = Struct.new(:name, :url)
     [link.new("Home", root_path),
+     link.new("Pictures", pictures_path),
      link.new("Trip Map", map_path),
      link.new("About", about_path),
      link.new("Contact", contact_path),

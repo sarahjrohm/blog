@@ -35,6 +35,7 @@ class InitializeDb < ActiveRecord::Migration
       t.string   "slug",       :null => false
       t.text     "body",       :null => false
       t.text     "body_html",  :null => false
+      t.datetime "published_at"
       t.datetime "created_at"
       t.datetime "updated_at"
     end

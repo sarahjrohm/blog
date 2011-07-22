@@ -7,6 +7,7 @@ resources :supports, :only => [:new, :create]
   match '/contact', :to => 'supports#new'
   match '/about',   :to => 'pages#about'
   match '/map',   :to => 'pages#map'
+  match '/pictures',   :to => 'albums#index'
 
   namespace 'admin' do
     resource :session

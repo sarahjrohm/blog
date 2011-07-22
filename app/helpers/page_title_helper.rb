@@ -11,6 +11,10 @@ module PageTitleHelper
     compose_title("Archives")
   end
   
+  def albums_title
+    compose_title("Pictures")
+  end
+  
   def about_title
     compose_title("About")
   end

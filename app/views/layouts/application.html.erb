@@ -31,11 +31,6 @@
         <% unless category_links_for_navigation.empty? -%>
         <div id= "menu">
             <h2>Pictures</h2>
-          <ul>
-            <% picture_links_for_navigation.each do |link| -%>
-              <li><%= link_to(link.name, link.url) %></li>
-            <% end -%>
-          </ul>
           <h2>Tags</h2>
           <ul>
             <% category_links_for_navigation.each do |link| -%>
