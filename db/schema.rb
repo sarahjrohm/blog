@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722144358) do
+ActiveRecord::Schema.define(:version => 20110724191041) do
 
   create_table "albums", :force => true do |t|
     t.string   "title",                                     :null => false
@@ -105,6 +105,10 @@ ActiveRecord::Schema.define(:version => 20110722144358) do
     t.timestamp "updated_at"
     t.timestamp "edited_at",                                 :null => false
     t.string    "image"
+    t.string    "photo_file_name"
+    t.string    "photo_content_type"
+    t.integer   "photo_file_size"
+    t.datetime  "photo_updated_at"
   end
 
   add_index "posts", ["published_at"], :name => "index_posts_on_published_at"
